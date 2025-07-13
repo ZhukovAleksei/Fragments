@@ -40,17 +40,16 @@ class PostViewHolder(private val binding: CardPostBinding, private val onInterac
         infoAuthor.text = post.author
         data.text = post.published
         content.text = post.content
-        countLikes.text = formatNumber(post.countLikes.toInt())
-        countShare.text = formatNumber(post.countShare.toInt())
+        like.text = formatNumber(post.countLikes.toInt())                    //=======//
+        share.text = formatNumber(post.countShare.toInt())
         countViews.text = formatNumber(post.countViews.toInt())
 
-        like.setImageResource(
-            if (post.likedByMe) R.drawable.button_like_red_24 else R.drawable.button_like_24
-        )
+        like.isChecked = post.likedByMe                                      //=======//
+
         like.setOnClickListener {
             onInteractionListener.onLike(post)
         }
-        toShare.setOnClickListener {
+        share.setOnClickListener {
             onInteractionListener.onShare(post)
         }
         buttonMenu.setOnClickListener {

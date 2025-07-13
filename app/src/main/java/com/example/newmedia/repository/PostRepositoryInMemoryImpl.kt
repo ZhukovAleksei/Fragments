@@ -17,7 +17,7 @@ class PostRepositoryInMemoryImpl : PostRepository {
             likedByMe = false,
 
             countLikes = 999,
-            countShare = 999,
+            countShare = 997,
             countViews = 999,
             repostByMe = false
 
@@ -81,7 +81,8 @@ class PostRepositoryInMemoryImpl : PostRepository {
         posts = posts.map {
             if (it.id != id) it else it.copy(
                 repostByMe = !it.repostByMe,
-                countShare = if (it.repostByMe) it.countShare - 1 else it.countShare + 1
+                countShare = it.countShare + 1
+                //countShare = if (it.repostByMe) it.countShare - 1 else it.countShare + 1
             )
         }
         data.value = posts
