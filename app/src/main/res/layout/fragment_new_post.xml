@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewPostActivity">
+    tools:context=".activity.NewPostFragment">
 
     <EditText
         android:id="@+id/editText"
@@ -13,11 +13,11 @@
         android:layout_height="match_parent"
         android:gravity="top"
         android:hint="@string/post_text"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="8dp"
+        android:importantForAutofill="no"
         android:inputType="textMultiLine"
         android:minHeight="48dp"
-        android:importantForAutofill="no" />
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"

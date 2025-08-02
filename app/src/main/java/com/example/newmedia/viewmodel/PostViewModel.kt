@@ -1,14 +1,11 @@
-package com.example.newmedia
+package com.example.newmedia.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.newmedia.dto.Post
 import com.example.newmedia.repository.PostRepository
 import com.example.newmedia.repository.PostRepositoryFileImpl
-import com.example.newmedia.repository.PostRepositoryInMemoryImpl
-import com.example.newmedia.repository.PostRepositorySharedPrefsImpl
 
 private val empty = Post(
     id = 0,

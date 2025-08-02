@@ -16,7 +16,7 @@ interface OnInteractionListener {
     fun onLike(post: Post)
     fun onShare(post: Post)
     fun onRemove(post: Post)
-    fun onChange(post: Post)
+    fun onEdit(post: Post)
 }
 
 class PostsAdapter( private val onInteractionListener: OnInteractionListener) : ListAdapter<Post, PostViewHolder>(PostDiffCallback) {
@@ -62,7 +62,7 @@ class PostViewHolder(private val binding: CardPostBinding, private val onInterac
                             true
                         }
                         R.id.change -> {
-                            onInteractionListener.onChange(post)
+                            onInteractionListener.onEdit(post)
                             true
                         }
                         else -> false
